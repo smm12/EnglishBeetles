@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+<title>えいごムシかご</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="app-header">
+  <div class="app-title">🐞 えいごムシかご</div>
+  <div class="coin-badge" id="coinBadge">🪙 <span id="coinCount">0</span></div>
+</header>
+
+<main id="main">
+
+  <!-- ================= 単語学習タブ ================= -->
+  <section id="studyTab" class="tab-panel">
+
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill" id="masteredFill"></div>
+      </div>
+      <div class="progress-label"><span id="masteredCount">0</span> / <span id="totalCount">0</span> たんご せいは！</div>
+    </div>
+
+    <div class="card" id="quizCard">
+      <!-- JSで中身を差し替える -->
+    </div>
+
+    <div id="feedback" class="feedback" aria-live="polite"></div>
+
+  </section>
+
+  <!-- ================= ムシかごタブ ================= -->
+  <section id="beetleTab" class="tab-panel hidden">
+
+    <div class="cage">
+      <div class="cage-dirt" id="cageDirt"></div>
+      <div class="jelly-dish" id="jellyDish">🍮</div>
+      <div class="beetle-wrap" id="beetleWrap">
+        <div class="beetle" id="beetleEmoji">🥚</div>
+      </div>
+      <div class="stage-label" id="stageLabel">たまご</div>
+    </div>
+
+    <div class="stats">
+      <div class="stat-row">
+        <span class="stat-icon">🧼</span>
+        <div class="stat-track"><div class="stat-fill clean" id="cleanFill"></div></div>
+        <span class="stat-num" id="cleanNum">0</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-icon">🍮</span>
+        <div class="stat-track"><div class="stat-fill full" id="fullFill"></div></div>
+        <span class="stat-num" id="fullNum">0</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-icon">💪</span>
+        <div class="stat-track"><div class="stat-fill power" id="powerFill"></div></div>
+        <span class="stat-num" id="powerNum">0</span>
+      </div>
+    </div>
+    <div class="power-label" id="powerLabel">つよさ: ふつう</div>
+
+    <div class="beetle-actions">
+      <button class="beetle-btn" id="btnClean">
+        <span class="beetle-btn-icon">🧹</span>
+        <span>おそうじ</span>
+        <span class="cost">🪙5</span>
+      </button>
+      <button class="beetle-btn" id="btnJelly">
+        <span class="beetle-btn-icon">🍮</span>
+        <span>ゼリーをあげる</span>
+        <span class="cost">🪙8</span>
+      </button>
+      <button class="beetle-btn" id="btnTrain">
+        <span class="beetle-btn-icon">🏋️</span>
+        <span>つよくする</span>
+        <span class="cost">🪙15</span>
+      </button>
+    </div>
+
+    <div class="beetle-msg" id="beetleMsg"></div>
+
+  </section>
+
+</main>
+
+<nav class="tab-nav">
+  <button class="tab-btn active" id="navStudy">
+    <span class="tab-btn-icon">📖</span>
+    <span>たんご学習</span>
+  </button>
+  <button class="tab-btn" id="navBeetle">
+    <span class="tab-btn-icon">🐞</span>
+    <span>ムシかご</span>
+  </button>
+</nav>
+
+<script src="words.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
